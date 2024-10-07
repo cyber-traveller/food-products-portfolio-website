@@ -1,0 +1,285 @@
+/* Reset and Base Styles */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #f09115;
+    color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    align-items: center;
+    position: relative; /* Ensures positioning context for absolute elements */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.title {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.nav-links li a:hover {
+    color: #000000d7; /* Lighter shade on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    z-index: 1001; /* Ensures it's above the overlay */
+}
+
+.hamburger:focus {
+    outline: none; /* Removes default focus outline */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    background: #fff;
+    height: 80vh;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 2.5rem;
+}
+.hero p {
+    font-size: 1.2rem;
+}
+.hero .btn {
+    margin-top: 20px;
+}
+
+/* About, Products, Contact Sections */
+.about, .products, .contact {
+    padding: 4rem;
+    text-align: center;
+    background: #fff;
+    margin-top: 2rem;
+}
+.about h2, .products h2, .contact h2 {
+    margin-bottom: 1rem;
+}
+
+/* Products List */
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.product {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+.product:hover {
+    transform: scale(1.05);
+    background-color: #ffe4b5;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.btn:hover {
+    background: #ff9500;
+    transform: scale(1.05);
+}
+
+/* Social Media Links */
+.social-media {
+    margin-top: 2rem;
+}
+.social-media a {
+    color: #333;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-media a:hover {
+    color: #0077b5;
+}
+
+/* Phone Call Link */
+.contact p {
+    margin-top: 1rem;
+}
+.contact a {
+    color: #333;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+.contact a:hover {
+    color: #0077b5;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Overlay Styles (Optional) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Below the hamburger icon */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-title {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo {
+        width: 60px; /* Smaller logo on mobile */
+    }
+    .title {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+    
+    /* Display Hamburger Icon */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    /* Navigation Links */
+    .nav-links {
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: #f09115;
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Hidden by default */
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999; /* Below the hamburger icon */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* Hero Section Adjustments */
+    .hero {
+        padding: 2rem;
+        height: auto;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Products List Adjustments */
+    .product-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product {
+        width: 90%; /* Full width with some margin */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Social Media Links Adjustments */
+    .social-media a {
+        margin: 0 5px;
+    }
+
+    /* Button Adjustments */
+    .btn {
+        padding: 8px 16px;
+    }
+}
